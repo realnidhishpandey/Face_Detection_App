@@ -1,0 +1,141 @@
+/* Base Reset and Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #1e1e2f, #232343);
+  color: #f0f0f0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Layout Container */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Left Panel - Face Detection */
+.left-panel {
+  width: 720px;
+  height: 560px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+video,
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+}
+
+/* Right Panel - Expression Details */
+.right-panel {
+  flex: 1;
+  padding: 40px 30px;
+  background: rgba(34, 34, 60, 0.85);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-left: 2px solid #444;
+  backdrop-filter: blur(6px);
+}
+
+.right-panel h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #00e0ff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.right-panel p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Expression Card */
+.expression-card {
+  background: linear-gradient(135deg, #2e2e50, #3f3f66);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.expression-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 16px rgba(0, 255, 255, 0.15);
+}
+
+.expression-card p {
+  margin: 6px 0;
+}
+
+.exp {
+  color: #ffd95c;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.phrase {
+  color: #c0c0ff;
+  font-style: italic;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.phrase::before {
+  content: "💬";
+  margin-right: 6px;
+}
+
+/* Control Buttons */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.right-panel button {
+  padding: 12px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s;
+}
+
+.right-panel button:hover {
+  background-color: #45a049;
+}
+
+.right-panel button:active {
+  transform: scale(0.96);
+}
+
+.right-panel button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Optional: Red variant for stop button */
+.stop-btn {
+  background-color: #f44336;
+}
+
+.stop-btn:hover {
+  background-color: #d32f2f;
+}
